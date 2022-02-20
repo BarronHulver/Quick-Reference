@@ -1,0 +1,53 @@
+# Unix Quick Reference
+
+general format: <command> <one or more arguments>
+A lot of commands are very short, like abbreviations, in order to make it faster to type the command
+   for example: cd for change directory
+                pwd for print working directory
+
+file commands:
+     ls [-laTtrR]       # optional common single-letter argments.  Can be combined together
+     cat [-n]          # view the contents of a file, optionally with line numbers
+     more              # view the contents of a file with pagination
+     head [-n <count>] <filename>.  # view the first <count> lines of a file, defaults to 10
+     tail [-n <count>] <filename>.  # view the last <count> lines of a file
+     touch <filename>     # create an empty file
+     rm <filename>        # remove (delete) a file
+     cp [-p] <source-filename> <destination-filename> # copy a file (make a duplicate)
+     mv <source-filename> <destination-filename> # move (rename) a file
+     wc -l                # count the number of lines in a file
+    
+directory commands:
+     pwd              # print working directory
+     mkdir <directory name> # make a new directory
+     rmdir <directory name> # remove a directory
+     cd               # with no argments means change to your home directory
+     cd <directory>   # change directory to a specific directory
+     cd ..            # go up one level
+     mkdir <directory name>
+    
+how to use pipes and redirection
+     <command> > <filename> # Redirect output to a file.  Create or overwrite the file
+     <command> >> <filename> # Redirect output to a file.  create or append the file
+     <command> | <command>   # Send the output of a command to another command
+        example: ls -la | more
+       
+file permissons
+     file permissions have the following three categories:
+        u - user.  This is you
+        g - group.  This is a group that you are in
+        o - other.  Everyone else
+     chmod  <mode> <filename> # changes the security permissions on a file or directory
+        example: chmod ugo+rx syllabus.txt   # Allow anyone to read (view) the file
+                 chmod go-rwx syllabus.txt   # Don'lt let anyone other than you get access to the file
+     
+Other commands:
+     man  <command>. # read short documentation on the command.  Google is another way
+     grep <pattern> <filename> # search a file for a pattern
+     sort [<arguments> <filename> # sort a file
+     uniq [-c | -d | -u] [-i] <filename> # show or fileter out repeated lines in a file. -i means ignore upper and lower case
+     history # show the history of the commands you have used
+     clear   # clear the screen
+     date    # show the current date and time
+     printenv  # show your environment variables
+
