@@ -51,4 +51,5 @@ Other commands:
      uniq [-c | -d | -u] [-i] <filename> # show or fileter out repeated lines in a file. -i means ignore upper and lower case
      history # show the history of the commands you have used
      printenv  # show your environment variables
+     crontab -l # show scheduled jobs - will cover this more in Bash shell programming
 
