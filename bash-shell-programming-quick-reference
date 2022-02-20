@@ -3,6 +3,10 @@
 The first line of all shell scripts should be similar to the following:
 #!/bin/bash
 
+Comments start after a pound sign (#).  Two examples:
+# This entire line is a comment
+echo "Script is running"  # Give the user some feedback
+
 Command line syntax:
   <command>  <variable1> <variable2> ... <variableN>
  
@@ -27,12 +31,20 @@ Comparisons
     num1 -lt num2       compares if 1st number is less than 2nd number
     num1 -ne num2       compares if 1st number is not equal to 2nd number
     
-  String Comparisons
+  Common String Comparisons
+    operators: =, !=
+    string1 = string2.   # returns true if string1 is equal to sring2
+    string1 != string2.  # returns true if string1 is not equal to string2
   
-  File Comparisons
+  Common File Comparison operators
+    -e <filename> # returns True if file (or directory) exists
+    -d <filename> # returns True if this is a directory, otherwise returns false (its a file)
+    
   
   If and elif
   
   Looping
+  
+  functions
   
 
