@@ -1,0 +1,38 @@
+# Bash Shell Programmming Quick Reference
+
+The first line of all shell scripts should be similar to the following:
+#!/bin/bash
+
+Command line syntax:
+  <command>  <variable1> <variable2> ... <variableN>
+ 
+ Built-in variables:
+  $1-$N: within your script each variable is referenced by $1, $2, ..., $N
+  $# - number of variables passed into the script
+  $0 - the name of the script
+  $? - stores the exit value of the last command.  A value of 0 generally means successful
+
+Quote marks:
+" - double-quotes means ignore/keep the whitespace but still process special characters
+' - single quotes means keep the string intact as-is.  Do not process special characters
+` - single backward quote - means execute this as a Unix command
+
+Comparisons
+  Numeric Comparisons
+    operators:  -eq -ge -gt -le -lt -ne
+    num1 -eq num2       compares if 1st number is equal to 2nd number
+    num1 -ge num2       compares if 1st number is greater than or equal to 2nd number
+    num1 -gt num2       compares if 1st number is greater than 2nd number
+    num1 -le num2       compares if 1st number is less than or equal to 2nd number
+    num1 -lt num2       compares if 1st number is less than 2nd number
+    num1 -ne num2       compares if 1st number is not equal to 2nd number
+    
+  String Comparisons
+  
+  File Comparisons
+  
+  If and elif
+  
+  Looping
+  
+
