@@ -45,6 +45,7 @@ Other commands:
      clear   # clear the screen
      date    # show the current date and time
      echo [<argument>] # just prints the argument
+     which <filename>  # locate a program file in the user's path
      man  <command>    # read short documentation on the command.  Google is another way
      grep <pattern> <filename> # search a file for a pattern
      sort [<arguments> <filename> # sort a file
