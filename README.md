@@ -4,10 +4,15 @@ This repository is only for documentation.  Various quick references, cheat-shee
 
 Markdown is a very simple way to format documents
 
-unordered list in markdown
+unordered list in markdown using asterisks
 * point 1
 * next comment
 * third bullet point
+
+unordered list in markdown using hyphens
+- point 1
+- next comment
+- third bullet point
 
 Numbered list in markdown
 1. point 1
