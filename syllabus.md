@@ -37,6 +37,7 @@ Revised: 2/19/2022
      how to use pipes
      man
      grep
+     history
  ```
   * editors - there are different types of editors
      * vi and vim
