@@ -39,6 +39,7 @@ Revised: 2/19/2022
      grep
      history
  ```
+ 
 3. editors - there are different types of editors
    * vi and vim - basic general-purpose editors.  There are many editors in this category
    * sed
