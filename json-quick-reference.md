@@ -17,14 +17,15 @@
 - key-value pairs are separated by commas.  Note that the last key-value pair will not have a comma
 - Indentation does not matter.  Best practice is to make it readable so use 2-4 spaces
 - A nested JSON object just means that for a key-value pair, the value is a JSON object
+  - If a JSON object is not nested, it is also called a "flat" JSON object
 - An array has just values (no keys).  An array is enclosed in square brackets []
 
-#### empty JSON object example
+#### Example of an empty JSON object
 ```
 {}
 ```
 
-#### simple JSON object example
+#### Example of a simple JSON object (flat)
 
 ```
 {
@@ -43,7 +44,7 @@
 }
 ```
 
-#### An example of a nested JSON object
+#### Example of a nested JSON object
 ```
 {
     "first_name": "John",
@@ -62,7 +63,7 @@
 },
 ```
 
-#### An example of an array
+#### Example of an array
 ```
 {
     "first_name": "John",
