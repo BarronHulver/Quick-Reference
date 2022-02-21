@@ -44,10 +44,11 @@ Revised: 2/19/2022
      * sed
      * boop (JSON editor)
      * IDE - Interactive Development Environment (we are not going to cover this unless we learn Apple Swift)
-  * writing shell scripts 
   * Use crontab to schedule your shell scripts
 
-3) security
+3) Programming in Bash
+
+5) security
    * usernames and passwords
    * keys (public and private key pairs)
       - keys are *much* better security than username and password
