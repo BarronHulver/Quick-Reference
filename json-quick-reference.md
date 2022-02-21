@@ -2,6 +2,7 @@
 
 #### General notes
 - JSON file names use the .json extension
+- A JSON object starts with a left brace { and ends with a right brace }
 - JSON is a key-value data format
 - A key-value pair has a colon between them: "first-name" : "John"
 - The key is on the left and is in double quotes
@@ -15,6 +16,11 @@
   - null
 - key-value pairs are separated by commas.  Note that the last key-value pair will not have a comma
 - A nested JSON object just means that for a key-value pair, the value is a JSON object
+
+#### empty JSON object example
+```
+{}
+```
 
 #### simple example
 
