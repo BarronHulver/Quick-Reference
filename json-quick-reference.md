@@ -1,6 +1,6 @@
 # JSON Quick Reference
 
-## General notes
+#### General notes
 - JSON file names use the .json extension
 - JSON is a key-value data format
 - A Key-value pair has a colon between them: "first-name" : "John"
@@ -13,8 +13,10 @@
   - arrays
   - boolean (true or false) - not quoted
   - null
+- key-value pairs are separated by commas.  Note that the last key-value pair will not have a comma
+- A nested JSON object just means that for a key-value pair, the value is a JSON object
 
-# simple example
+#### simple example
 
 ```
 {
@@ -32,3 +34,23 @@
   "retired" : false
 }
 ```
+
+#### An example of a nested JSON object
+```
+{
+            "first_name": "John",
+            "last_name": "Doe",
+            "gender": "male",
+            "age": 48,
+            "street_address": "125 main street",
+            "city": "Cleveland",
+            "state": "OH",
+            "zip_code": "44106",
+            "phone_numbers": {
+                "home": "440-229-7392",
+                "cell": "440-737-3983",
+                "work": "216-225-7352"
+            }
+        },
+        ```
+        
