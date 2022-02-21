@@ -2,6 +2,8 @@
 
 This repository is only for documentation.  Various quick references, cheat-sheets, and notes are in here.
 
+Markdown is a very simple way to format documents
+
 unordered list in markdown
 * point 1
 * next comment
@@ -18,3 +20,4 @@ This line is not formatted in markdown
 This line is also not formatted
 ```
 
+More documentation about [markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
