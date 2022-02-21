@@ -45,7 +45,7 @@ Revised: 2/19/2022
      * boop - Used to edit JSON files
      * IDE - Interactive Development Environment (we are not going to cover this unless we learn Apple Swift)
 
-3) Programming in Bash
+3) Bash shell programming
 
 5) security
    * usernames and passwords
