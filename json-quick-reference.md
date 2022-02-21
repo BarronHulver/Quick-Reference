@@ -15,6 +15,7 @@
   - boolean (true or false) - not quoted
   - null
 - key-value pairs are separated by commas.  Note that the last key-value pair will not have a comma
+- Indentation does not matter.  Best practice is to make it readable so use 2-4 spaces
 - A nested JSON object just means that for a key-value pair, the value is a JSON object
 
 #### empty JSON object example
@@ -44,19 +45,19 @@
 #### An example of a nested JSON object
 ```
 {
-            "first_name": "John",
-            "last_name": "Doe",
-            "gender": "male",
-            "age": 48,
-            "street_address": "125 main street",
-            "city": "Cleveland",
-            "state": "OH",
-            "zip_code": "44106",
-            "phone_numbers": {
-                "home": "440-229-7392",
-                "cell": "440-737-3983",
-                "work": "216-225-7352"
-            }
-        },
-        ```
+    "first_name": "John",
+    "last_name": "Doe",
+    "gender": "male",
+    "age": 48,
+    "street_address": "125 main street",
+    "city": "Cleveland",
+    "state": "OH",
+    "zip_code": "44106",
+    "phone_numbers": {
+        "home": "440-229-7392",
+        "cell": "440-737-3983",
+        "work": "216-225-7352"
+     }
+},
+```
         
