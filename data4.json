@@ -1,0 +1,41 @@
+[
+    {
+        "first_name": "John",
+        "last_name": "Doe",
+        "gender": "male",
+        "age": 48,
+        "street_address": "125 main street",
+        "city": "Cleveland",
+        "state": "OH",
+        "zip_code": "44106",
+        "home_phone": "440-229-7392",
+        "cell_phone": "440-737-3983",
+        "work_phone": "216-225-7352"
+    },
+    {
+        "first_name": "Mary",
+        "last_name": "Doe",
+        "gender": "female",
+        "age": 47,
+        "street_address": "125 main street",
+        "city": "Cleveland",
+        "state": "OH",
+        "zip_code": "44106",
+        "home_phone": "440-229-7392",
+        "cell_phone": "440-737-8231",
+        "work_phone": "440-929-5631"
+    },
+    {
+        "first_name": "Sam",
+        "last_name": "Doe",
+        "gender": "male",
+        "age": 24,
+        "street_address": "125 main street",
+        "city": "Cleveland",
+        "state": "OH",
+        "zip_code": "44106",
+        "home_phone": "440-229-7392",
+        "cell_phone": "440-737-3983",
+        "work_phone": "216-225-7352"
+    }
+]
