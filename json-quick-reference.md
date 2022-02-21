@@ -61,7 +61,7 @@
         "work": "216-225-7352"
      },
      "retired" : false
-},
+}
 ```
 
 #### Example of an array
@@ -82,6 +82,6 @@
      ],
      "retired" : false
      }
-},
+}
 ```
 
