@@ -39,15 +39,15 @@ Revised: 2/19/2022
      grep
      history
  ```
-3) editors - there are different types of editors
+3. editors - there are different types of editors
      * vi and vim - basic general-purpose editors.  There are many editors in this category
      * sed
      * boop - Used to edit JSON files
      * IDE - Interactive Development Environment (we are not going to cover this unless we learn Apple Swift)
 
-3) Bash shell programming
+4. Bash shell programming
 
-5) security
+5. security
    * usernames and passwords
    * keys (public and private key pairs)
       - keys are *much* better security than username and password
@@ -56,19 +56,21 @@ Revised: 2/19/2022
       - something you have (eg a mobile phone)
    * How to securely store your passwords, financial, and other important data in an encrypted volume
 
-4) awk programming language
+6. awk programming language
 
-5) Introduction to git and GitHub
+7. Introduction to git and GitHub
   * This is just very introductory information
   * git and GitHub are very popular so it is useful to at least be aware of this
   * Putting your awk scripts on GitHub
   * getting someone else's awk scripts from GitHub
 
-6) Python programming
+8. JSON data files
+
+9. Python programming
   * two types of techniques
     * regular programming (we will cover this)
     * object-oriented programming (we are not going to cover this)
 
-7) Swift programming language
+10. Swift programming language
    * Use this to write an app for the iPhone (very advanced)
 
