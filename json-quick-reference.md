@@ -15,3 +15,20 @@
   - null
 
 # simple example
+
+```
+{
+  "first_name" : "John",
+  "last_name" : "Doe",
+  "gender" : "male",
+  "age" : 48,
+  "street_address" : "125 main street",
+  "city" : "Cleveland",
+  "state" : "OH",
+  "zip_code" : "44106",
+  "home_phone" : "440-229-7392",
+  "cell_phone" : "440-737-3983",
+  "work_phone" :  "216-225-7352",
+  "retired" : false
+}
+```
