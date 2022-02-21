@@ -4,6 +4,7 @@ Terminology - all of these mean the same thing
   - Terminal
   - Shell
   - Bash
+  - Command Line
   - Command Line Interface (CLI)
 
 general format: <command> <one or more arguments>
