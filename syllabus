@@ -1,7 +1,7 @@
-Learning to Program Syllabus
+# Learning to Program Syllabus
 Revised: 2/19/2022
 
-Overview
+## Overview
 - Learn to Program from 1 to 4 programming languages
   a) shell (not really a programming language but it can be programmed)
   b) awk
@@ -11,13 +11,13 @@ Overview
       - Must use a Macintosh and either an iPhone or an iPad
 - This is best done using a Macintosh
 
-1) Create a GitHub account and put this syllabus on it
+1. Create a GitHub account and put this syllabus on it
    - go to https://github.com and create an account
    - create a repository called Quick-Reference
      - create a README.md file
      - create a syllabus file and put this document in it
 
-2) Unix shell commands
+2. Unix shell commands
   a) basic commands (some are listed below, but make a quick reference called unix-quick-reference
      general format: <command> <one or more arguments>
      ls
