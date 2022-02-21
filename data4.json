@@ -11,7 +11,8 @@
             "zip_code": "44106",
             "home_phone": "440-229-7392",
             "cell_phone": "440-737-3983",
-            "work_phone": "216-225-7352"
+            "work_phone": "216-225-7352",
+            "retired" : false
         },
         {
             "first_name": "Mary",
@@ -24,7 +25,8 @@
             "zip_code": "44106",
             "home_phone": "440-229-7392",
             "cell_phone": "440-737-8231",
-            "work_phone": "440-929-5631"
+            "work_phone": "440-929-5631",
+            "retired" : false
         },
         {
             "first_name": "Sam",
@@ -37,7 +39,8 @@
             "zip_code": "44106",
             "home_phone": "440-229-7392",
             "cell_phone": "440-737-3983",
-            "work_phone": "216-225-7352"
+            "work_phone": "216-225-7352",
+            "retired" : false
         }
     ]
 }
