@@ -7,3 +7,7 @@ list
 * next comment
 * third bullet point
 
+Numbered list
+1. point 1
+2. point 2
+3. third point
