@@ -39,12 +39,11 @@ Revised: 2/19/2022
      grep
      history
  ```
-  * editors - there are different types of editors
+3) editors - there are different types of editors
      * vi and vim
      * sed
      * boop (JSON editor)
      * IDE - Interactive Development Environment (we are not going to cover this unless we learn Apple Swift)
-  * Use crontab to schedule your shell scripts
 
 3) Programming in Bash
 
