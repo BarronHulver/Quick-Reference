@@ -42,7 +42,7 @@ Revised: 2/19/2022
 3. editors - there are different types of editors
      * vi and vim - basic general-purpose editors.  There are many editors in this category
      * sed
-     * boop - Used to edit JSON files
+     * boop - Used to edit JSON files (This will be covered under JSON data files.)
      * IDE - Interactive Development Environment (we are not going to cover this unless we learn Apple Swift)
 
 4. Bash shell programming
