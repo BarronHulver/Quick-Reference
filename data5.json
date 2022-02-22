@@ -42,9 +42,9 @@
             "state": "OH",
             "zip_code": "44106",
             "phone_numbers": {
-                "home": "440-229-7392",
-                "cell": "440-737-3983",
-                "work": "216-225-7352"
+                "home": null,
+                "cell": "440-737-9214",
+                "work": "828-327-7821"
             },
             "retired" : false
         }
