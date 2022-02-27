@@ -2,7 +2,7 @@
 
 #### General notes
 - YAML file names use the .yml or .yaml extension
-- The YAML file starts with three hyphens (---)
+- The YAML file optionally starts with three hyphens (---)
 - The basic construct is a key-value pair
 - A key-value pair has a colon between them: first-name: "John"
 - The key is on the left
