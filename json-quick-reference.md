@@ -19,6 +19,7 @@
 - A nested JSON object just means that for a key-value pair, the value is a JSON object
   - If a JSON object is not nested, it is also called a "flat" JSON object
 - An array has just values (no keys).  An array is enclosed in square brackets []
+- Tip: A JSON file can easily be converted to YAML and vice-versa.  Try https://www.json2yaml.com
 
 #### Example of an empty JSON object
 ```
