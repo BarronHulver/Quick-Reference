@@ -1,0 +1,42 @@
+---
+people:
+- first_name: John
+  last_name: Doe
+  gender: male
+  age: 48
+  street_address: 125 main street
+  city: Cleveland
+  state: OH
+  zip_code: '44106'
+  phone_numbers:
+    home: 440-229-7392
+    cell: 440-737-3983
+    work: 216-225-7352
+  retired: false
+- first_name: Mary
+  last_name: Doe
+  gender: female
+  age: 47
+  street_address: 125 main street
+  city: Cleveland
+  state: OH
+  zip_code: '44106'
+  phone_numbers:
+    home: 440-229-7392
+    cell: 440-737-8231
+    work: 440-929-5631
+  retired: false
+- first_name: Sam
+  last_name: Doe
+  gender: male
+  age: 24
+  street_address: 125 main street
+  city: Cleveland
+  state: OH
+  zip_code: '44106'
+  phone_numbers:
+    home:
+    cell: 440-737-9214
+    work: 828-327-7821
+  retired: false
+  
