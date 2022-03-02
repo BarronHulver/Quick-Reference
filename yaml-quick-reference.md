@@ -6,7 +6,10 @@
 - The YAML file optionally starts with three hyphens (---)
 - no tabs are allowed.  Indentation must be done using spaces
 - The basic construct is a key-value pair
-- A key-value pair has a colon between them: first-name: "John"
+- A key-value pair has a colon and space between them
+  ```
+  first-name: "John"
+  ```
 - The key is on the left and is not in quotes
   - Best practice is to have the key be letters and underscores (no spaces)
 - The value is on the right and is one of these 6 simple data types
@@ -55,7 +58,7 @@
   - timestamp
 - key-value pairs are separated by commas.  Note that the last key-value pair will not have a comma
 - Indentation does not matter.  Best practice is to make it readable so use 2-4 spaces
-- A nested YAML dictionary just means that for a key-value pair, the value is a YAML dictionary
+- A nested YAML dictionary just means that for a key-value pair, the value is a dictionary
 - An array has just values (no keys).  An array is enclosed in square brackets [] if on a single line, or listed with hypens
 - Tip: A YAML file can easily be converted to JSON and vice-versa.  Try https://www.json2yaml.com
 
