@@ -20,8 +20,13 @@
     - octal - begins with a zero e.g. age: 014
     - some other numeric types
   - dictionaries
-    - single line - e.g. phone_numbers: { home: "440-229-7392", cell: "440-737-3983", work: "216-225-7352" }
-    - multiple lines:
+    - a dictionary can be on a single line - e.g. 
+```
+      phone_numbers: { home: "440-229-7392", cell: "440-737-3983", work: "216-225-7352" }
+```
+
+    - or a dictionary can be on multiple lines:
+
 ```
       phone_numbers: 
         home: "440-229-7392",
