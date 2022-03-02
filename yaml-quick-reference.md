@@ -11,7 +11,8 @@
   - Best practice is to have the key be letters and underscores (no spaces)
 - The value is on the right and is one of these 6 simple data types
   - strings e.g. first_name: "John"
-    - Strings do not have to be enclosed in quotes.  Or can be in double or single quotes
+    - Strings do not have to be enclosed in quotes, or they can be in single or double quotes
+    - If a string looks like another data type then it must be in quotes.  e.g. zip_code: '44106'
   - numeric - not quoted
     - integers e.g. age: 14
     - floating point (real) numbers e.g. price: 572.35
