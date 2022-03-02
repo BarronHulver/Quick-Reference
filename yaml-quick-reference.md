@@ -99,7 +99,7 @@ retired: false
 
 ```
 
-#### Example of an array
+#### Example of an array of phone numbers
 ```
 ---
 first_name: John
