@@ -40,11 +40,17 @@ Comparisons
     -e <filename> # returns True if file (or directory) exists
     -d <filename> # returns True if this is a directory, otherwise returns false (its a file)
     
-  
-  If and elif
-  
-  Looping
-  
+  variables
+  parameters/built-in variables
+  if statement
+    simple if
+    if with a compound conditional
+    if .. elif .. else
+  case statement
+  looping
+    while
+    for
+    break and continue
   functions
   
 
