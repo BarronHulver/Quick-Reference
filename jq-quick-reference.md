@@ -58,3 +58,13 @@ Manual:
   ```
       jq '.people[] | .first_name, .last_name' data5.json
   ```
+* Parenthesis: ()
+  * Parenthesis give evaluation priority to what is enclosed, just like other programming languages
+  ```
+      jq '.people[] | .first_name, (.age+1)' data5.json
+  ```
+* Object constructor: {}
+  * Used to construct objects (dictionaries)
+   ```
+      jq '.people[] | {fname: .first_name, lname: .last_name, agenextyear: (.age+1)}' data5.json
+   ```
