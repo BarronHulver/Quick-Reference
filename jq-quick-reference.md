@@ -5,7 +5,7 @@ Manual:
    https://stedolan.github.io/jq/manual/
    https://github.com/stedolan/jq/wiki/jq-Language-Description
    ```
- 
+
 * Identity: .
     * Identity filter that passes input to its output unchanged
    ```
@@ -71,5 +71,8 @@ Manual:
 * Array constructor: []
   * Used to construct arrays
    ```
-      jq '.people | [.[].first_name]' data5.json. # produces an array of first names
+      jq '.people | [.[].first_name]' data5.json # produces an array of first names
+      jq '.people | [.[].age] | sort' data5.json # produces an array of sorted ages
+      jq '.people | [.[].age] | sort | reverse' data5.json # produces an array of sorted ages oldest to youngest
+      jq '.people | [.[].city] | unique' data5.json # produces an array of unique cities sorted
    ```
