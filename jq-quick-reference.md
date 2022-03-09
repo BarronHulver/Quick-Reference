@@ -38,3 +38,23 @@ Manual:
   ```
       jq '.people | .[]' data5.json
   ```
+* Array or Object value Iterator if : .[]?
+  * like .[], but if the input is not an array or object there are no errors
+  ```
+      jq '.people[0].phone_numbers.home | .[]?' data5.json
+  ```
+* Pipe: |
+  * Similar to the Unix pipe, it sends the output of the left filter to the input on the right
+  ```
+      jq '.people[] | .first_name' data5.json    # print a list of first names
+      jq '.people[] | keys' data5.json           # print an array of the keys
+      jq '.people[0] | keys | .[]' data5.json    # print a list of the top-level keys for the first object
+      jq '.people[] | length' data5.json         # get the number of top-level keys for each object in the people array
+      jq '.people[0] | keys | .[] | length' data5.json  # show the length of each key for the first object
+      jq '.people | length' data5.json           # get the number of objects in the people array
+  ```
+* Comma: ,
+  * Concatenation: The same input is fed into each filter and the output is concatenated
+  ```
+      jq '.people[] | .first_name, .last_name' data5.json
+  ```
