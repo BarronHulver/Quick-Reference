@@ -68,3 +68,8 @@ Manual:
    ```
       jq '.people[] | {fname: .first_name, lname: .last_name, agenextyear: (.age+1)}' data5.json
    ```
+* Array constructor: []
+  * Used to construct arrays
+   ```
+      jq '.people | [.[].first_name]' data5.json. # produces an array of first names
+   ```
