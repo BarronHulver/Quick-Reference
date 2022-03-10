@@ -107,3 +107,12 @@ Manual:
       jq '[.people[] | select(.last_name == "Doe")]' data5.json # produces an array of all objects where the last_name is Doe
       jq '.people | map(select(.last_name == "Doe"))' data5.json # produces an array of all objects where the last_name is Doe
     ```
+  * if A then B else C end # produces its input unchanged if the expression is true
+  * if A then B elif C else D end
+    ```
+      jq '.people[] | if (.first_name | length) > 3 then .first_name else empty  end' data5.json # produce a list of first names that are more than 3 characters
+    ```
+  * and/or/not # normal Boolean operators
+      ```
+      jq '.people[] | if (.first_name | length) > 3 and .last_name == "Doe" then .first_name else empty  end' data5.json # produce a list of first names that are more than 3 characters and whose last name is Doe
+    ```
