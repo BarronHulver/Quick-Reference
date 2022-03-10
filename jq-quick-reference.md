@@ -95,6 +95,8 @@ Manual:
     ```
       jq '.people | map(.first_name)' data5.json # produces an array of first names
       jq '.people | [.[] | .first_name]' data5.json # produces an array of first names
+      jq '.people | .[] | [.first_name, .last_name, .age]' data5.json # produces a list of arrays
+      jq -r '.people | .[] | [.first_name, .last_name, .age] | @csv' data5.json # produces a comma-separated values list with one record per line
       jq '.people | map(.first_name, .last_name)'  data5.json # produces an array of first names and last names, in order
       jq '.people | map({fname: .first_name, lname: .last_name})' data5.json # produces an array of objects.  Each object has two keys: "fname" and "lname".
       jq '.people | [.[] | {fname: .first_name, lname: .last_name}]' data5.json # produces an array of objects.  Each object has two keys: "fname" and "lname".
@@ -116,3 +118,13 @@ Manual:
       ```
       jq '.people[] | if (.first_name | length) > 3 and .last_name == "Doe" then .first_name else empty  end' data5.json # produce a list of first names that are more than 3 characters and whose last name is Doe
     ```
+ 
+  * builtins
+    * list the built-in fuctions
+    ```
+      jq 'builtins | length' data5.json # get the number of builtin functions
+      jq 'builtins' data5.json # produce an array of builtin functions
+      jq 'builtins | sort' data5.json # produce a sorted array of builtin functions
+      jq 'builtins | sort[0:20]' data5.json # produce a sorted array of the first 20 builtin functions (after the sort)
+    ```
+    
