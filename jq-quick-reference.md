@@ -1,5 +1,7 @@
 #### JQ Quick Reference
 
+JSON data types: string, number, object (dictionary), array, boolean, null
+
 Manual:
    ```
    https://stedolan.github.io/jq/manual/
@@ -76,3 +78,32 @@ Manual:
       jq '.people | [.[].age] | sort | reverse' data5.json # produces an array of sorted ages oldest to youngest
       jq '.people | [.[].city] | unique' data5.json # produces an array of unique cities sorted
    ```
+* Recursive Descent: ..
+  * Descends through the structure producing every value
+   ```
+      jq '.. | .first_name?' data5.json # produces a list of first names (not a very good example)
+      jq 'path(..)' data5.json # may be helpful in seeing the path
+   ```
+* Some built-in operators and functions
+  * +, -, *, /, and %
+  * length # get the length of the value
+  * keys, keys_sorted # produce all the keys in an object
+  * reverse # reverses the order of an array
+  * has(key) # If an object has the key then returns true else false.  If an array has an element at that index return true
+  * in(object|array) # if the input key is in the object then returns true else false.  If the input index has an element in the array return true.
+  * map(filter) # Applies the filter to each element of the input array and return a new array.  Map(filter) is equivalent to [.[] | filter]
+    ```
+      jq '.people | map(.first_name)' data5.json # produces an array of first names
+      jq '.people | [.[] | .first_name]' data5.json # produces an array of first names
+      jq '.people | map(.first_name, .last_name)'  data5.json # produces an array of first names and last names, in order
+      jq '.people | map({fname: .first_name, lname: .last_name})' data5.json # produces an array of objects.  Each object has two keys: "fname" and "lname".
+      jq '.people | [.[] | {fname: .first_name, lname: .last_name}]' data5.json # produces an array of objects.  Each object has two keys: "fname" and "lname".
+    ```
+  * map_values(filter) # applies the filter to each elemnt but will return an object
+  * path(path_expression) # produces an array of the path of each element
+  * select(expression) # produces its input unchanged if the expression is true
+    ```
+      jq '.people[] | select(.first_name == "John")' data5.json # selects all objects where the first_name is John
+      jq '[.people[] | select(.last_name == "Doe")]' data5.json # produces an array of all objects where the last_name is Doe
+      jq '.people | map(select(.last_name == "Doe"))' data5.json # produces an array of all objects where the last_name is Doe
+    ```
