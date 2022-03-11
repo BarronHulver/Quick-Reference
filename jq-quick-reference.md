@@ -15,16 +15,19 @@ Manual:
    ```
   
 * Object Identifer-Index: .\<key\> or .\<key\>.\<key\> 
-    * If the key has special characters or starts with a digit: ."key"
+    * A filter that outputs the value of the key in an object (dictionary).
+    * If the key has special characters or starts with a digit it must be in quotes: ."key"
   ```
       jq '.last_name' data3.json
       jq '."last_name"' data3.json
   ```
 * Optional Object Identifer-Index: .\<key\>?
+  * A filter that outputs the value of the key if the key exists
   ```
       jq '.middle_name?'  data3.json
    ```
 * Array index: .[\<index\>]
+  * A filter that ouputs the value of a specific element in an array.  Indexes start at 0
   ```
       jq '.people[0]' data5.json
       jq '.people | .[0]' data5.json
@@ -35,18 +38,18 @@ Manual:
       jq '.people | .[0:2]' data5.json
   ```
 * Array or Object value Iterator: .[]
-  * For an array it will return all elements of an array as a list
-  * For an object it will return all the values as a list
+  * For an array it will iterate over all of the elements and output each one.  The output is a list.
+  * For an object it will iterate over each key-value pair and output the value of each key.  The output is a list.
   ```
       jq '.people | .[]' data5.json
   ```
 * Array or Object value Iterator if : .[]?
-  * like .[], but if the input is not an array or object there are no errors
+  * like .[], but if the input is not an array or object there are no errors (there is no output).
   ```
       jq '.people[0].phone_numbers.home | .[]?' data5.json
   ```
 * Pipe: |
-  * Similar to the Unix pipe, it sends the output of the left filter to the input on the right
+  * Similar to the Unix pipe, it sends the output of the left filter to the input of the filter on the right
   ```
       jq '.people[] | .first_name' data5.json    # print a list of first names
       jq '.people[] | keys' data5.json           # print an array of the keys
@@ -63,15 +66,16 @@ Manual:
 * Parenthesis: ()
   * Parenthesis give evaluation precedence to what is enclosed, just like other programming languages
   ```
-      jq '.people[] | .first_name, (.age+1)' data5.json
+      jq '.people[] | .first_name, .last_name, (.age+1)' data5.json
   ```
 * Object constructor: {}
   * Used to construct objects (dictionaries)
    ```
-      jq '.people[] | {fname: .first_name, lname: .last_name, agenextyear: (.age+1)}' data5.json
+      jq '.people[] | {fname: .first_name, lname: .last_name, age_next_year: (.age+1)}' data5.json
    ```
 * Array constructor: []
   * Used to construct arrays
+  * Especially useful if the output of a filter is a list but you need an array for input to the next filter
    ```
       jq '.people | [.[].first_name]' data5.json # produces an array of first names
       jq '.people | [.[].age] | sort' data5.json # produces an array of sorted ages
@@ -81,8 +85,13 @@ Manual:
 * Recursive Descent: ..
   * Descends through the structure producing every value
    ```
-      jq '.. | .first_name?' data5.json # produces a list of first names (not a very good example)
+      jq '..' data5.json
       jq 'path(..)' data5.json # may be helpful in seeing the path
+      jq '.. | .first_name?' data5.json # outputs a list of first names (not a very good example because the output has some null values)
+      jq '.. | if (.first_name?) then .first_name else empty end' data5.json # outputs a list of first names
+      jq 'map(.. | if (.first_name?) then .first_name else empty end)' data5.json # outputs an array of first names
+      jq 'map(.. | if (.first_name?) then .first_name, .last_name else empty end)' data5.json # outputs an array of first and last names
+      jq 'map(.. | if (.first_name?) then {fname: .first_name, lname: .last_name} else empty end)' data5.json # outputs an array of objects where each object contains the first and last name
    ```
 * Some built-in operators and functions
   * +, -, *, /, and %
