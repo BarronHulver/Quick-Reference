@@ -15,7 +15,7 @@ Manual:
    ```
   
 * Object Identifer-Index: .\<key\> or .\<key\>.\<key\> 
-    * A filter that outputs the value of the key in an object (dictionary).
+    * A filter that outputs the value of the key in an object (dictionary)
     * If the key has special characters or starts with a digit it must be in quotes: ."key"
   ```
       jq '.last_name' data3.json
@@ -38,13 +38,13 @@ Manual:
       jq '.people | .[0:2]' data5.json
   ```
 * Array or Object value Iterator: .[]
-  * For an array it will iterate over all of the elements and output each one.  The output is a list.
-  * For an object it will iterate over each key-value pair and output the value of each key.  The output is a list.
+  * For an array it will iterate over all of the elements and output each one.  The output is a list
+  * For an object it will iterate over each key-value pair and output the value of each key.  The output is a list
   ```
       jq '.people | .[]' data5.json
   ```
 * Array or Object value Iterator if : .[]?
-  * like .[], but if the input is not an array or object there are no errors (there is no output).
+  * like .[], but if the input is not an array or object there are no errors (there is no output)
   ```
       jq '.people[0].phone_numbers.home | .[]?' data5.json
   ```
@@ -118,7 +118,8 @@ Manual:
       jq '[.people[] | select(.last_name == "Doe")]' data5.json # produces an array of all objects where the last_name is Doe
       jq '.people | map(select(.last_name == "Doe"))' data5.json # produces an array of all objects where the last_name is Doe
     ```
-  * if A then B else C end # produces its input unchanged if the expression is true
+  * if A then B else C end # if A is true then applies the filter B otherwise applies the filter C
+    * "else" is required.  The filter "empty" can be useful if you do not need an else.  emtpy outputs nothing
   * if A then B elif C else D end
     ```
       jq '.people[] | if (.first_name | length) > 3 then .first_name else empty  end' data5.json # produce a list of first names that are more than 3 characters
