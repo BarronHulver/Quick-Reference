@@ -82,7 +82,11 @@ Manual:
 * Object constructor: {}
   * Used to construct objects (dictionaries)
    ```
-      jq '.people[] | {fname: .first_name, lname: .last_name, age_next_year: (.age+1)}' data5.json
+      jq '.people[] | {fname: .first_name, lname: .last_name}' data5.json # outputs a list of objects where each object has the first and last name
+      jq '[.people[] | {fname: .first_name, lname: .last_name}[' data5.json # outputs an array of objects where each object has the first and last name
+      jq '.people[] | {fname: .first_name, lname: .last_name, numbers: .phone_numbers}' data5.json # outputs a list of objects with a nested object of phone numbers
+      jq '.people[] | {fname: .first_name, lname: .last_name, age_next_year: (.age+1)}' data5.json # outputs a list of objects with the age next year
+      jq '[.people[] | {fname: .first_name, lname: .last_name, phnumbers: ([.phone_numbers[] | (if . != null then . else empty end)])}]' data5.json # outputs an array of objects with an array of phone numbers
    ```
 * Array constructor: []
   * Used to construct arrays
