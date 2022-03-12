@@ -113,7 +113,20 @@ Manual:
       jq 'map(.. | if (.first_name?) then {fname: .first_name, lname: .last_name} else empty end)' data5.json # outputs an array of objects where each object contains the first and last name
    ```
 * Some built-in operators and functions
-  * +, -, *, /, and %
+  * Addition: +
+    * The same input is fed into each filter and the output is "added" together depending on the type
+      * numbers are added together
+      * strings are concatenated
+      * arrays are joined together
+      * objects are merged
+    ```
+      jq '3 + 5' data5.json # ignores the input and outputs the number 8
+      jq '"Hello " + "World!"' data5.json # ignores the input and outputs the string "Hello World!"
+      jq '[1,2,3] + [3,4,5]' data5.json # ignores the input and outputs an array of six elements [1,2,3,3,4,5]
+      jq '[1,2,3] + [1,2,3] | unique' data5.json # ignores the input and outputs an array of three elements (a union of the two input arrays)
+      jq '{"fname": "John"} + {"lname": "Doe"}' data5.json # ignores the input and outputs one object containing the two keys "fname" and "lname"
+    ```
+  * , -, *, /, and %
   * length # get the length of the value
   * keys, keys_sorted # produce all the keys in an object
   * reverse # reverses the order of an array
