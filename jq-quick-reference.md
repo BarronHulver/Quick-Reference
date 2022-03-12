@@ -30,11 +30,12 @@ Manual:
 * Optional Object Identifer-Index: .\<key\>?
   * A filter that outputs the value of the key if the key exists otherwise outputs null
   ```
-      jq '.people[] | .first_name?'  data3.json # outputs a list of the first names
+      jq '.people[] | .first_name?'  data3.json # outputs a list of the first names (outputs a null if the first_name key does not exist)
       jq '.people[] | .middle_name?'  data3.json # outputs a list of nulls because middle_name is not a key
-      jq '.people[] | if .first_name then .first_name else empty end'  data3.json # outputs a list of first names
+      jq '.people[] | if .first_name then .first_name else empty end'  data3.json # outputs a list of first names with no nulls
       jq '.people[] | if .middle_name then .middle_name else empty end'  data3.json # outputs nothing because middle_name is not a key
-      jq '.people[] | if has("first_name") then .first_name else empty end'  data3.json # outputs a list of first names
+      jq '.people[] | if has("first_name") then .first_name else empty end'  data3.json # outputs a list of first names with no nulls
+      jq '.people[] | select(has("first_name")) | .first_name'  data3.json # outputs a list of first names with no nulls
    ```
 * Array index: .[\<index\>]
   * A filter that outputs the value of a specific element in an array.  Indexes start at 0
