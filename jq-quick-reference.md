@@ -56,13 +56,18 @@ Manual:
   ```
 * Pipe: |
   * Similar to the Unix pipe, it sends the output of the left filter to the input of the filter on the right
+  * If the filter on the left produces multiple results, the the filter on the right will be run once for each result
   ```
-      jq '.people[] | .first_name' data5.json    # print a list of first names
-      jq '.people[] | keys' data5.json           # print an array of the keys
-      jq '.people[0] | keys | .[]' data5.json    # print a list of the top-level keys for the first object
-      jq '.people[] | length' data5.json         # get the number of top-level keys for each object in the people array
-      jq '.people[0] | keys | .[] | length' data5.json  # show the length of each key for the first object
-      jq '.people | length' data5.json           # get the number of objects in the people array
+      jq '.people[] | .first_name' data5.json      # output a list of first names
+      jq '.people | .[] | .first_name' data5.json  # output a list of first names
+      jq '[.people[] | .first_name]' data5.json    # output an array of first names
+      jq '.people[] | keys' data5.json           # output a list of arrays containing the keys
+      jq '.people[0] | keys | .[]' data5.json    # output a list of the top-level keys for the first object
+      jq '[.people[0] | keys | .[]]' data5.json    # output an array of the top-level keys for the first object
+      jq '[.people[0] | keys | .[]] | sort' data5.json    # output a sorted array of the top-level keys for the first object
+      jq '.people[] | length' data5.json         # output a list of the number of top-level keys for each object in the people array
+      jq '.people[0] | keys | .[] | length' data5.json  # output a list containing the length of each key for the first object
+      jq '.people | length' data5.json           # output the number of objects in the people array
   ```
 * Comma: ,
   * Concatenation: The same input is fed into each filter and the output is concatenated
