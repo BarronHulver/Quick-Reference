@@ -9,11 +9,11 @@ Manual:
    ```
 
 * Identity: .
-    * Identity filter that passes input to its output unchanged
+    * Identity filter that passes the input to its output unchanged
    ```
       jq '.' data3.json
    ```
-* empty: empty
+* suppress output: empty
     * the empty filter "empties" all of the input; it produces no output
     * This may be particularly useful in an if-else filter because the else is required
    ```
