@@ -126,13 +126,14 @@ Manual:
       jq '[1,2,3] + [1,2,3] | unique' data5.json # ignores the input and outputs an array of three elements (a union of the two input arrays)
       jq '{"fname": "John"} + {"lname": "Doe"}' data5.json # ignores the input and outputs one object containing the two keys "fname" and "lname"
     ```
-  * , -, *, /, and %
+  *  -, *, /, and %
   * length # get the length of the value
   * keys, keys_sorted # produce all the keys in an object
   * reverse # reverses the order of an array
   * has(key) # If an object has the key then returns true else false.  If an array has an element at that index return true
   * in(object|array) # if the input key is in the object then returns true else false.  If the input index has an element in the array return true.
-  * map(filter) # Applies the filter to each element of the input array and return a new array.  Map(filter) is equivalent to [.[] | filter]
+  * map(filter) # Applies the filter to each element of the input array and return a new array.
+    * map(filter) is equivalent to [.[] | filter]
     ```
       jq '.people | map(.first_name)' data5.json # produces an array of first names
       jq '.people | [.[] | .first_name]' data5.json # produces an array of first names
