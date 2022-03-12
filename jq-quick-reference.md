@@ -1,4 +1,4 @@
-#### JQ Quick Reference
+#### JQ Quick Reference for version 1.6
 
 JSON data types: string, number, object (dictionary), array, boolean, null
 
@@ -28,12 +28,16 @@ Manual:
       jq '."last_name"' data3.json
   ```
 * Optional Object Identifer-Index: .\<key\>?
-  * A filter that outputs the value of the key if the key exists
+  * A filter that outputs the value of the key if the key exists otherwise outputs null
   ```
-      jq '.middle_name?'  data3.json
+      jq '.people[] | .first_name?'  data3.json # outputs a list of the first names
+      jq '.people[] | .middle_name?'  data3.json # outputs a list of nulls because middle_name is not a key
+      jq '.people[] | if .first_name then .first_name else empty end'  data3.json # outputs a list of first names
+      jq '.people[] | if .middle_name then .middle_name else empty end'  data3.json # outputs nothing because middle_name is not a key
+      jq '.people[] | if has("first_name") then .first_name else empty end'  data3.json # outputs a list of first names
    ```
 * Array index: .[\<index\>]
-  * A filter that ouputs the value of a specific element in an array.  Indexes start at 0
+  * A filter that outputs the value of a specific element in an array.  Indexes start at 0
   ```
       jq '.people[0]' data5.json
       jq '.people | .[0]' data5.json
