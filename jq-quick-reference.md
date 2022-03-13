@@ -142,6 +142,7 @@ Manual:
       jq -r '.people | .[] | [.first_name, .last_name, .age] | @csv' data5.json # produces a comma-separated values list with one record per line
       jq -r '.people | .[] | " \(.first_name),\(.last_name),\(.age)"' data5.json # produces a comma-separated values list with one record per line
       jq -r '.people[] | " \(.first_name),\(.last_name),\(.age)"' data5.json # produces a comma-separated values list with one record per line
+      jq -r '.people | .[] | [.first_name, .last_name, .age] | join(",")' data5.json # produces a comma-separated values list with one record per line
       jq '.people | map(.first_name, .last_name)'  data5.json # produces an array of first names and last names, in order
       jq '.people | map({fname: .first_name, lname: .last_name})' data5.json # produces an array of objects.  Each object has two keys: "fname" and "lname".
       jq '.people | [.[] | {fname: .first_name, lname: .last_name}]' data5.json # produces an array of objects.  Each object has two keys: "fname" and "lname".
