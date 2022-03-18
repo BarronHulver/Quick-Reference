@@ -175,3 +175,12 @@ Manual:
       jq 'builtins | sort[0:20]' data5.json # produce a sorted array of the first 20 builtin functions (after the sort)
     ```
     
+ * group_by
+    ```
+    jq '.people | group_by(.state)' data4.json # output an array of arrays of objects containing the objects by state
+    jq '.people | [group_by(.state)[] | { city: .[0].city, count: length }]' data4.json # output an array of objects containing the count of objects by state
+    jq '.people | [group_by(.state)[] | { city: .[0].city, count: length }] | .[] | [.city, .count] | @csv' # output a csv list with each record having the count of objects in each state
+    jq '.people | group_by(.state)[] | { city: .[0].city, count: length } |  [.city, .count] | @csv' # output a csv list with each record having the count of objects in each state
+     jq '[.people[] | {city: .city}] | group_by(.city)[] | {city: .[0].city, count: length} | [ .city, .count] | @csv' # output a csv list with each record having the count of objects in each state
+    ```
+    
