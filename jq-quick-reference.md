@@ -181,6 +181,6 @@ Manual:
     jq '.people | [group_by(.state)[] | { city: .[0].city, count: length }]' data4.json # output an array of objects containing the count of objects by state
     jq '.people | [group_by(.state)[] | { city: .[0].city, count: length }] | .[] | [.city, .count] | @csv' # output a csv list with each record having the count of objects in each state
     jq '.people | group_by(.state)[] | { city: .[0].city, count: length } |  [.city, .count] | @csv' # output a csv list with each record having the count of objects in each state
-     jq '[.people[] | {city: .city}] | group_by(.city)[] | {city: .[0].city, count: length} | [ .city, .count] | @csv' # output a csv list with each record having the count of objects in each state
+    jq '[.people[] | {city: .city}] | group_by(.city)[] | {city: .[0].city, count: length} | [ .city, .count] | @csv' # output a csv list with each record having the count of objects in each state
     ```
     
